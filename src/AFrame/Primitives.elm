@@ -1,31 +1,39 @@
-module AFrame.Primitives exposing (..)
+module AFrame.Primitives exposing
+    ( box, circle, colladaModel, cone, cursor, curvedimage, cylinder, dodecahedron, gltfModel, icosahedron, image, link, objModel, octahedron, plane, ring, sky, sound, sphere, tetrahedron, text, torusKnot, torus, triangle, video, videosphere
+    , assets, assetItem
+    )
 
 {-| A-Frame primitives.
 
+
 # Geometric primitives
+
 @docs box, circle, colladaModel, cone, cursor, curvedimage, cylinder, dodecahedron, gltfModel, icosahedron, image, link, objModel, octahedron, plane, ring, sky, sound, sphere, tetrahedron, text, torusKnot, torus, triangle, video, videosphere
 
+
 # Scene primitives
+
 @docs sky
 
+
 # Asset management
+
 @docs assets, assetItem, image
 
 -}
 
-import Html exposing (node, Html, Attribute)
+import Html exposing (Attribute, Html, node)
 
 
 {-| The box primitive, formerly called <a-cube>,
-    creates shapes such as boxes, cubes, or walls.
+creates shapes such as boxes, cubes, or walls.
 -}
 box : List (Attribute msg) -> List (Html msg) -> Html msg
 box =
     node "a-box"
 
 
-{-|
--}
+{-| -}
 circle : List (Attribute msg) -> List (Html msg) -> Html msg
 circle =
     node "a-circle"
@@ -57,8 +65,8 @@ curvedimage =
 
 
 {-| The cylinder primitive is an entity that
-    prescribes the geometry with its geometric primitive set to cylinder.
-    It can be used to create tubes and curved surfaces.
+prescribes the geometry with its geometric primitive set to cylinder.
+It can be used to create tubes and curved surfaces.
 -}
 cylinder : List (Attribute msg) -> List (Html msg) -> Html msg
 cylinder =
@@ -123,9 +131,9 @@ ring =
 
 
 {-| The sky primitive adds a background to a scene
-    or display a 360-degree photo.
-    It is an entity that prescribes a large sphere with the material
-    mapped to the inside.
+or display a 360-degree photo.
+It is an entity that prescribes a large sphere with the material
+mapped to the inside.
 -}
 sky : List (Attribute msg) -> List (Html msg) -> Html msg
 sky =
@@ -146,8 +154,7 @@ sphere =
     node "a-sphere"
 
 
-{-|
--}
+{-| -}
 tetrahedron : List (Attribute msg) -> List (Html msg) -> Html msg
 tetrahedron =
     node "a-tetrahedron"
@@ -160,8 +167,7 @@ text =
     node "a-text"
 
 
-{-|
--}
+{-| -}
 torusKnot : List (Attribute msg) -> List (Html msg) -> Html msg
 torusKnot =
     node "a-torus-knot"

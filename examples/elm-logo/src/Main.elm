@@ -1,39 +1,40 @@
-module Main exposing (..)
+module Main exposing (blue, green, grey, heightFromPrismRadius, main, orange)
 
-import Html exposing (Html)
-import Color exposing (rgb, Color)
-import AFrame exposing (scene, entity)
+import AFrame exposing (entity, scene)
 import AFrame.Animations
     exposing
         ( animation
-        , easing
         , attribute_
         , dur
+        , easing
         , fill
-        , to
         , repeat
+        , to
         )
 import AFrame.Primitives exposing (box, cylinder)
 import AFrame.Primitives.Attributes
     exposing
-        ( rotation
-        , color
-        , scale
-        , radius
+        ( color
         , position
+        , radius
+        , rotation
+        , scale
         , segmentsRadial
         )
 import AFrame.Primitives.Camera exposing (camera, wasdControlsEnabled)
+import Color exposing (Color, rgb)
+import Html exposing (Html)
 
 
 {-| Calculate scale factor for x axis of a triangular prism,
 to get a prism with a proper shape.
 
     heightFromPrismRadius 2
+
 -}
 heightFromPrismRadius : Float -> Float
 heightFromPrismRadius radius =
-    radius / ((sqrt 3) / 3)
+    radius / (sqrt 3 / 3)
 
 
 orange : Color
@@ -83,7 +84,7 @@ main =
             , cylinder
                 [ radius 1
                 , segmentsRadial 3
-                , scale (heightFromPrismRadius ((sqrt 2) / 2)) 1 ((sqrt 2) / 2)
+                , scale (heightFromPrismRadius (sqrt 2 / 2)) 1 (sqrt 2 / 2)
                 , color blue
                 , rotation -135 -90 90
                 , position 1 2 0

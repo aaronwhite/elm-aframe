@@ -1,22 +1,29 @@
-module AFrame.Primitives.Cursor exposing (..)
+module AFrame.Primitives.Cursor exposing
+    ( cursor
+    , fuse, maxDistance, timeout, raycaster
+    )
 
 {-| Cursor primitive.
 
+
 # Definitions
+
 @docs cursor
 
+
 # Attributes
+
 @docs fuse, maxDistance, timeout, raycaster
 
 -}
 
-import String exposing (toLower)
-import Html exposing (node, Html, Attribute)
+import Html exposing (Attribute, Html, node)
 import Html.Attributes exposing (attribute)
+import String exposing (toLower)
 
 
 {-| The cursor primitive places a reticle or crosshair to add clicking
-    and interactivity with the scene.
+and interactivity with the scene.
 -}
 cursor : List (Attribute msg) -> List (Html msg) -> Html msg
 cursor =
@@ -27,7 +34,15 @@ cursor =
 -}
 fuse : Bool -> Attribute msg
 fuse value =
-    attribute "fuse" (toLower (if value then "true" else "false"))
+    attribute "fuse"
+        (toLower
+            (if value then
+                "true"
+
+             else
+                "false"
+            )
+        )
 
 
 {-| Maximum distance to check for intersections on entities for clicks.

@@ -1,23 +1,31 @@
-module AFrame.Primitives.Camera exposing (..)
+module AFrame.Primitives.Camera exposing
+    ( camera
+    , far, fov, lookControlsEnabled, near, wasdControlsEnabled
+    )
 
 {-| Camera primitive.
 
+
 # Primitives
+
 @docs camera
 
+
 # Attributes
+
 @docs far, fov, lookControlsEnabled, near, wasdControlsEnabled
 
 -}
 
-import String exposing (toLower)
-import Html exposing (node, Html, Attribute)
+import Html exposing (Attribute, Html, node)
 import Html.Attributes exposing (attribute)
+import String exposing (toLower)
 
 
 {-| The camera primitive places the user somewhere within the scene.
 
     camera [] []
+
 -}
 camera : List (Attribute msg) -> List (Html msg) -> Html msg
 camera =
@@ -41,10 +49,19 @@ fov value =
 {-| Enable look controls.
 
     camera [ lookControlsEnabled False ] []
+
 -}
 lookControlsEnabled : Bool -> Attribute msg
 lookControlsEnabled value =
-    attribute "look-controls-enabled" (toLower (if value then "true" else "false"))
+    attribute "look-controls-enabled"
+        (toLower
+            (if value then
+                "true"
+
+             else
+                "false"
+            )
+        )
 
 
 {-| Camera frustum near clipping plane.
@@ -57,7 +74,16 @@ near value =
 {-| Enable WASD controls for camera.
 
     camera [ wasdControlsEnabled False ] []
+
 -}
 wasdControlsEnabled : Bool -> Attribute msg
 wasdControlsEnabled value =
-    attribute "wasd-controls-enabled" (toLower (if value then "true" else "false"))
+    attribute "wasd-controls-enabled"
+        (toLower
+            (if value then
+                "true"
+
+             else
+                "false"
+            )
+        )

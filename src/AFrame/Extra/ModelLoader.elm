@@ -1,7 +1,7 @@
-module AFrame.Extra.ModelLoader exposing (..)
+module AFrame.Extra.ModelLoader exposing (plymodel)
 
-import Html.Attributes exposing (attribute)
 import Html exposing (Attribute)
+import Html.Attributes exposing (attribute)
 
 
 plymodel : String -> Attribute msg

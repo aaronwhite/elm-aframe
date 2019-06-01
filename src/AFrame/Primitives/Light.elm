@@ -1,19 +1,29 @@
-module AFrame.Primitives.Light exposing (..)
+module AFrame.Primitives.Light exposing
+    ( light
+    , type_, intensity
+    , Light(..)
+    )
 
 {-| Light primitive.
 
+
 # Primitives
+
 @docs light
 
+
 # Attributes
+
 @docs type_, intensity
 
+
 # Types
+
 @docs Light
 
 -}
 
-import Html exposing (node, Html, Attribute)
+import Html exposing (Attribute, Html, node)
 import Html.Attributes exposing (attribute)
 
 
@@ -36,7 +46,8 @@ light =
 
 {-| Set light type.
 
-  Check https://aframe.io/docs/0.5.0/components/light.html#properties to get more information about the different kinds of lights
+Check <https://aframe.io/docs/0.5.0/components/light.html#properties> to get more information about the different kinds of lights
+
 -}
 type_ : Light -> Attribute msg
 type_ light_ =
@@ -58,7 +69,7 @@ type_ light_ =
                 Spot ->
                     "spot"
     in
-        attribute "type" lightType
+    attribute "type" lightType
 
 
 {-| Light strength.

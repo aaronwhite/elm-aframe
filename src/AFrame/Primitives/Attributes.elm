@@ -1,26 +1,40 @@
-module AFrame.Primitives.Attributes exposing (..)
+module AFrame.Primitives.Attributes exposing
+    ( color, metalness, shader, src, opacity, roughness, translate, transparent
+    , radius, radiusTop, radiusBottom, position, scale, rotation, height, width, depth, segmentsRadial
+    , angle, decay, distance, exponent, groundColor, intensity, type_
+    , vrModeUi
+    )
 
 {-| A-Frame primitive attributes.
 
+
 # Mesh attributes
+
 @docs color, metalness, shader, src, opacity, roughness, translate, transparent
 
+
 # Geometry attributes
+
 @docs radius, radiusTop, radiusBottom, position, scale, rotation, height, width, depth, segmentsRadial
 
+
 # Light attributes
+
 @docs angle, decay, distance, exponent, groundColor, intensity, type_
 
+
 # Scene attributes
+
 @docs vrModeUi
 
 -}
 
-import String exposing (toLower)
-import Html exposing (Attribute)
-import Html.Attributes exposing (attribute)
 import Color exposing (Color)
 import Color.Convert exposing (colorToHex)
+import Html exposing (Attribute)
+import Html.Attributes exposing (attribute)
+import String exposing (toLower)
+
 
 
 -- Mesh attributes
@@ -75,7 +89,15 @@ translate x y z =
 {-| -}
 transparent : Bool -> Attribute msg
 transparent value =
-    attribute "transparent" (toLower (if value then "true" else "false"))
+    attribute "transparent"
+        (toLower
+            (if value then
+                "true"
+
+             else
+                "false"
+            )
+        )
 
 
 
@@ -218,4 +240,4 @@ vrModeUi enabled =
         attribstring =
             "enabled: " ++ value
     in
-        attribute "vm-mode-ui" attribstring
+    attribute "vm-mode-ui" attribstring

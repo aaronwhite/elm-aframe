@@ -1,4 +1,6 @@
 import 'aframe';
-import { Main } from './Main.elm';
+import { Elm } from './Main.elm';
 
-Main.embed(document.getElementById('root'));
+const app = Elm.Main.init({
+  node: document.getElementById('root')
+});
